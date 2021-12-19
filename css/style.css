@@ -20,49 +20,54 @@
 
 /* shop by category section  */
 #ladies-category{
-    background-image: url(../images/showcase-img3.jpg);
-    background-size:100%;
+    background-image: url(../images/ladies.jpg);
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 #guys-category{
     background-image: url(../images/guys.jpg);
-    background-size:100%;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 #kids-category{
-    background-image: url(../images/kid.jpg);
-    background-size:100%;
+    background-image: url(../images/kids.jpg);
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 #beauty-category{
     background-image: url(../images/beauty.jpg);
-    background-size:100%;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 #apartment-category{
     background-image: url(../images/apartment.jpg);
-    background-size:100%;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 #eat-category{
     background-image: url(../images/eat.jpg);
-    background-size:100%;
+    background-size:cover;
     background-repeat: no-repeat;
 }
 
 .card-text{
     color: orange;
+    padding: 5px;
+}
+
+.card-text:hover{
+    color: white;
 }
 
 
 /* footer section  */
 #footer-nav, #copyright{
-    background: black;
+    /* background: black; */
     color:white;
 }
 
