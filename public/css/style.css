@@ -1,0 +1,86 @@
+/* navigation bar styling starts  */
+/* navigation bar styling  */
+#navigation-bar{
+    background-color: orange !important;
+}
+
+/* homepage styling starts  */
+/* homepage shocase section  */
+#showcase-section{
+    height: 90vh;
+    /* background-color:orange; */
+    background-image: url(../images/showcase.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#shop-now-btn{
+    color: orange;
+}
+
+/* shop by category section  */
+#ladies-category{
+    background-image: url(../images/ladies.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#guys-category{
+    background-image: url(../images/guys.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#kids-category{
+    background-image: url(../images/kids.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#beauty-category{
+    background-image: url(../images/beauty.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#apartment-category{
+    background-image: url(../images/apartment.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+#eat-category{
+    background-image: url(../images/eat.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.card-text{
+    color: orange;
+    padding: 5px;
+}
+
+.card-text:hover{
+    color: white;
+}
+
+/* create shop page styling starts  */
+#create-shop-showcase-section{
+    height: 70vh;
+    /* background-color:orange; */
+    background-image: url(../images/create-shop-showcase-image.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+
+/* footer styling starts  */
+/* footer section  */
+#footer-nav, #copyright{
+    /* background: black; */
+    color:white;
+}
+
+#copyright span{
+    color: orange;
+}

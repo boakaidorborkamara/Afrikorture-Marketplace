@@ -1,0 +1,26 @@
+{
+  "name": "afrikorture-marketplace",
+  "version": "1.0.0",
+  "description": "A web application that enables Liberians to sell African fashion, crafts, food, etc with ease locally and worldwide. (Kwagei Capstone &amp; cs50 Final Project)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boakaidorborkamara/afrikorture-marketplace.git"
+  },
+  "author": "Boakai Dorbor Kamara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boakaidorborkamara/afrikorture-marketplace/issues"
+  },
+  "homepage": "https://github.com/boakaidorborkamara/afrikorture-marketplace#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  }
+}
