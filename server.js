@@ -40,10 +40,24 @@ app.get('/create-shop', (req, res)=>{
     res.render('pages/register-store');
 })
 
+
+app.get('/brand-directory', (req, res)=>{
+
+    axios.get("https://api-afrikorture.glitch.me/stores")
+    .then((response)=>{
+        console.log(response)
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+    res.render('pages/brand-directory');
+})
+
+
 app.post('/store-registration', (req,res)=>{
     
     let store_details = req.body;
-    console.log(store_details);
+    // console.log(store_details);
 
     //add data to external api (api-afrikorture)
     let feedback;
