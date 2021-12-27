@@ -185,6 +185,55 @@ app.get('/snacks', (req, res)=>{
 })
 
 
+//routing to get all products starts =========================================
+// display this html page for all products
+app.get('/shop-all', (req, res)=>{
+    res.render('pages/shop-all');
+})
+
+
+//routing to get all women products only starts =========================================
+// display this html page for all women products
+app.get('/women', (req, res)=>{
+    res.render('pages/women');
+})
+
+
+//routing to get all men products only starts =========================================
+// display this html page for all men products
+app.get('/men', (req, res)=>{
+    res.render('pages/men');
+})
+
+
+
+//routing to get all kid products only starts =========================================
+// display this html page for all kid products
+app.get('/kids', (req, res)=>{
+    res.render('pages/kids');
+})
+
+
+//routing to get all beauty products only starts =========================================
+// display this html page for all beauty products
+app.get('/beauty', (req, res)=>{
+    res.render('pages/beauty');
+})
+
+
+//routing to get all apartment products only starts =========================================
+// display this html page for all apartment products
+app.get('/apartment', (req, res)=>{
+    res.render('pages/apartment');
+})
+
+
+//routing to get all food products only starts =========================================
+// display this html page for all food products
+app.get('/eat', (req, res)=>{
+    res.render('pages/eat');
+})
+
 //enable user to register a shop by adding shop details to the database
 app.post('/store-registration', (req,res)=>{
     
