@@ -2,7 +2,9 @@ const express = require('express')
 const app = express();
 const axios = require("axios").default;
 let path = require('path');
-const port = 5000;
+const port = 3000;
+
+let ejs = require('ejs');
 
 //enable json to be use
 app.use(express.json());
@@ -16,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 // create routes 
+// display homepage 
 app.get('/', (req, res)=> {
     
     let external_api_data;
@@ -36,24 +39,38 @@ app.get('/', (req, res)=> {
     // res.send(json(external_api_data));
 });
 
+// display create shop html page 
 app.get('/create-shop', (req, res)=>{
     res.render('pages/register-store');
 })
 
-
+// display brand directory page 
 app.get('/brand-directory', (req, res)=>{
+    res.render('pages/brand-directory');
+})
 
+//send data for for brand directory page
+app.get('/all-shops', (req, res)=>{
+    // get data from external api 
     axios.get("https://api-afrikorture.glitch.me/stores")
     .then((response)=>{
-        console.log(response)
+        let all_stores_data = response["data"];
+
+        // filter the data and get only the data that is needed by the user 
+        let needed_store_data=[];
+        all_stores_data.forEach((store)=>{
+            needed_store_data.push({store_name: store["store_name"], county:store["county"], address:store["store_address"]});
+        })
+        res.send(needed_store_data);
     })
     .catch((err)=>{
         console.log(err);
     })
-    res.render('pages/brand-directory');
+    
 })
 
 
+//enable user to register a shop by adding shop details to the database
 app.post('/store-registration', (req,res)=>{
     
     let store_details = req.body;
