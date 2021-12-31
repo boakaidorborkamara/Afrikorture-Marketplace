@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const axios = require("axios").default;
 let path = require('path');
-const port = 5000;
+const port = 3500;
 
 let ejs = require('ejs');
 
@@ -27,6 +27,11 @@ app.get('/', (req, res)=> {
 // display create shop html page 
 app.get('/create-shop', (req, res)=>{
     res.render('pages/register-store');
+})
+
+//display add product html page
+app.get('/upload-product',(req,res)=>{
+    res.render('pages/add-product')
 })
 
 // display brand directory html page 
@@ -57,44 +62,44 @@ app.get('/all-shops', (req, res)=>{
 // women related routing starts =========================================
 // display this html page for women accessories
 app.get('/women-accessories', (req, res)=>{
-    res.render('pages/women-accessories');
+
+    // get data from external api 
+    let data ;
+    axios.get("https://api-afrikorture.glitch.me/women-accessories")
+    .then((response)=>{
+        data = response;
+    })
+    .catch((error)=> {
+        console.log(error);
+    })
+
+    // wait for data before render the ejs template 
+    setTimeout(()=>{
+        console.log(data);
+        res.render('pages/women-accessories', data);
+    }, 3000);
 })
 
-//get data from external api for women accessories page
-// app.get('/women-accessories-data', (req, res)=>{
-//     // get data from external api 
-//     axios.get("https://api-afrikorture.glitch.me/women-accessories")
-//     .then((response)=>{
-//         let all_stores_data = response["data"];
-//         console.log(all_stores_data);
+//send data from external api for women accessories page
 
-//         // filter the data and get only the data that is needed by the user 
-//         let needed_store_data=[];
-//         all_stores_data.forEach((store)=>{
-//             needed_store_data.push({store_name: store["store_name"], county:store["county"], address:store["store_address"]});
-//         })
-//         res.send(needed_store_data);
-//     })
-//     .catch((err)=>{
-//         console.log(err);
-//     })
-    
-// })
 
 // display this html page for women shirts and blouses
-app.get('/women-shirt-&-blouse', (req, res)=>{
-    res.render('pages/women-shirt-&-blouse');
-})
+// app.get('/women-shirt-&-blouse', (req, res)=>{
+//     res.render('pages/women-shirt-&-blouse');
+// })
 
 // display this html page for women trouser and pants
 app.get('/women-trousers-&-pants', (req, res)=>{
     res.render('pages/women-trousers-&-pants');
 })
 
+
 // display this html page for women dresses and skirts
 app.get('/women-dresses-&-skirts', (req, res)=>{
     res.render('pages/women-dresses-&-skirts');
 })
+
+
 
 // display this html page for women shirts and blouse
 app.get('/women-footwear', (req, res)=>{
@@ -188,7 +193,23 @@ app.get('/snacks', (req, res)=>{
 //routing to get all products starts =========================================
 // display this html page for all products
 app.get('/shop-all', (req, res)=>{
-    res.render('pages/shop-all');
+    
+    // get data from external api 
+    let data ;
+    axios.get("https://api-afrikorture.glitch.me/products")
+    .then((response)=>{
+        data = response;
+    })
+    .catch((error)=> {
+        console.log(error);
+    })
+
+    // wait for data before render the ejs template 
+    setTimeout(()=>{
+        console.log(data);
+        res.render('pages/shop-all', data);
+    }, 3000);
+
 })
 
 
@@ -217,14 +238,44 @@ app.get('/kids', (req, res)=>{
 //routing to get all beauty products only starts =========================================
 // display this html page for all beauty products
 app.get('/beauty', (req, res)=>{
-    res.render('pages/beauty');
+
+    // get data from external api 
+    let data ;
+    axios.get("https://api-afrikorture.glitch.me/beauty-accessories")
+    .then((response)=>{
+        data = response;
+    })
+    .catch((error)=> {
+        console.log(error);
+    })
+
+    // wait for data before render the ejs template 
+    setTimeout(()=>{
+        console.log(data);
+        res.render('pages/beauty-accessories', data);
+    }, 3000);
+    // res.render('pages/beauty');
 })
 
 
 //routing to get all apartment products only starts =========================================
 // display this html page for all apartment products
-app.get('/apartment', (req, res)=>{
-    res.render('pages/apartment');
+app.get('/home-decoration', (req, res)=>{
+    // get data from external api 
+    let data ;
+    axios.get("https://api-afrikorture.glitch.me/home-decoration")
+    .then((response)=>{
+        data = response;
+    })
+    .catch((error)=> {
+        console.log(error);
+    })
+
+    // wait for data before render the ejs template 
+    setTimeout(()=>{
+        console.log(data);
+        res.render('pages/apartment', data);
+    }, 3000);
 })
 
 
@@ -234,6 +285,8 @@ app.get('/eat', (req, res)=>{
     res.render('pages/eat');
 })
 
+
+//POST ROUTES
 //enable user to register a shop by adding shop details to the database
 app.post('/store-registration', (req,res)=>{
     
@@ -259,6 +312,83 @@ app.post('/store-registration', (req,res)=>{
         console.log(error);
       });
 });
+
+
+// enable user to upload product 
+app.post('/upload-product', (req,res)=>{
+    
+    // frontend data 
+    let product_info = req.body;
+    console.log(product_info["username"]);
+    let frontend_username = product_info["username"];
+
+    // products already in the database 
+    let user_shop;
+    let store_id;
+
+    axios.get("https://api-afrikorture.glitch.me/stores")
+    .then((response)=>{
+        let all_shops = response["data"];
+
+        //check if user exist
+        all_shops.forEach((shop)=>{
+
+            if(frontend_username == shop["user_name"]){
+                console.log("user is here");
+                store_id = shop["store_id"];
+                console.log("store id", store_id);
+                // console.log(shop);
+
+                // add store_id to product detail 
+                product_info["store_id"] = store_id;
+                console.log(product_info);
+                // remove username 
+                delete product_info["username"];
+                console.log(product_info);
+
+
+
+
+                //add data to external api (api-afrikorture)
+    let feedback;
+    axios.post("https://api-afrikorture.glitch.me/products", product_info)
+      .then(function (response) {
+        feedback = response.data;
+        console.log(response);
+        console.log(feedback);
+        // validate 
+        if(response.status === 200 && feedback["code"] !== 0){
+            res.end(JSON.stringify(feedback));
+        }
+        else if (response.status === 200 && feedback["code"] === 0){
+            res.end(JSON.stringify(feedback));
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+            }
+            // else{
+            //     res.send({message:"Store not valid, make sure username is valid."})
+            // }
+            // console.log("frontend",frontend_username);
+            // console.log("backend", shop["user_name"]);
+        })
+        // console.log(all_shops);
+    })
+    .catch((err)=>{
+        if(err){
+            console.log(err);
+        }
+    })
+
+    
+});
+
+//add products
+// app.post('/add-product'){
+
+// }
 
 // notify which port is listening on
 app.listen(port, ()=>{

@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 /* navigation bar styling starts  */
 /* navigation bar styling  */
 #navigation-bar{
@@ -55,12 +59,12 @@
     background-repeat: no-repeat;
 }
 
-.card-text{
+.my-card-text{
     color: orange;
     padding: 5px;
 }
 
-.card-text:hover{
+.my-card-text:hover{
     color: white;
 }
 

@@ -6,6 +6,23 @@
 
 
   <h1 class="text-center fw-bolder mt-5 mb-5" id="page-title">Eat Exclusive</h1>
+  <!-- generate html base on data received dynamicly -->
+  <div class="container-fluid row" >
+    <!-- product showcase area  -->
+    <% data.forEach((product)=> {%>
+      <div class="col-lg-4 mb-4">
+        <div class="bg-dark text-light d-flex justify-content-center align-items-center p-5 me-4">
+          <h3 class="py-5">Image</h3>
+        </div>
+        <div>
+          <span><%= product["name"] %></span>
+          <br>
+          <span class="fw-bolder">$<%= product["price"]%>.00</span>
+          <i class="fas fa-shopping-basket mx-4" style="width: 5rem;"></i>
+        </div>
+      </div>
+    <%});%>
+  </div>
   
 
 

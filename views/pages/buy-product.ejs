@@ -9,7 +9,7 @@
       <h3 class="text-center fw-bolder" id="registration-form">Upload Product</h3>
       <form action="" method=""  >
         <div class="form-group mt-2">
-          <input type="text" class="form-control" id="username"  placeholder="Enter your username">
+          <input type="text" class="form-control" id="first-name"  placeholder="Enter your username">
         </div>
         <div class="form-group mt-4">
           <input type="text" class="form-control" id="product-name" placeholder="Product Name">
@@ -18,10 +18,10 @@
           <textarea name="" id="description" cols="30" rows="10" placeholder="Enter product description" style="width: 100%;"></textarea>
         </div>
         <div class="form-group mt-4">
-          <input type="number" required class="form-control" id="price" value="0">
+          <input type="number" required class="form-control" id="price" placeholder="Price">
         </div>
         <div class="form-group mt-4">
-          <select class="form-control" name="category" id="category" style="width: 100%;">
+          <select class="form-control" name="county" id="county" style="width: 100%;">
             <option value="select-count" disabled selected>Category</option>
             <option value="Women">Women</option>
             <option value="Men">Men</option>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group mt-4">
-          <select class="form-control" name="type" id="type" style="width: 100%;">
+          <select class="form-control" name="county" id="county" style="width: 100%;">
             <option value="select-count" disabled selected>Product Type</option>
             <option value="Accessories">Accessories</option>
             <option value="Dress & Skirt">Dress & Skirt</option>
@@ -48,7 +48,7 @@
   
         
         <div class="d-flex justify-content-center align-items-center">
-          <button type="button" class="btn btn-dark mt-4" id="upload-btn">Upload Product</button>
+          <button type="button" class="btn btn-dark mt-4" id="create-store-btn">Upload Product</button>
         </div>
       </form>
     </section>
@@ -59,7 +59,7 @@
   <%- include('../template/footer')-%>
 
   <!-- include custom js  -->
-  <script src="./javascript/upload-product.js"></script>
+  <script src="./javascript/register-store.js"></script>
   <!-- include bootstrap js  -->
   <script src="./bootstrap/bootstrap-min.js"></script>
    
