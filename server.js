@@ -14,229 +14,232 @@ app.use(express.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//setup public folder
+//setup static middleware
 app.use(express.static('./public'));
 
-// create routes 
+
+
+/* creation of routes starts ==================================== GET ROUTES STARTS
+====================================================================================
+===================================================================================*/
+
 // display homepage 
 app.get('/', (req, res)=> {
     //render home page
     res.render('pages/index');
 });
 
-// display create shop html page 
+// display create-a-shop page 
 app.get('/create-shop', (req, res)=>{
-    res.render('pages/register-store');
+    res.render('pages/register-stores');
+    // res.send("CREATE SHOP")
 })
 
-//display add product html page
+//display upload product page
 app.get('/upload-product',(req,res)=>{
     res.render('pages/add-product')
 })
 
 // display brand directory html page 
-app.get('/brand-directory', (req, res)=>{
-    res.render('pages/brand-directory');
-})
+app.get('/brands', (req, res)=>{
+    res.render('pages/brands');
 
-//send data for brand directory page
-app.get('/all-shops', (req, res)=>{
     // get data from external api 
-    axios.get("https://api-afrikorture.glitch.me/stores")
-    .then((response)=>{
-        let all_stores_data = response["data"];
+    // axios.get("https://api-afrikorture.glitch.me/stores")
+    // .then((response)=>{
+    //     let all_stores_data = response["data"];
 
-        // filter the data and get only the data that is needed by the user 
-        let needed_store_data=[];
-        all_stores_data.forEach((store)=>{
-            needed_store_data.push({store_name: store["store_name"], county:store["county"], address:store["store_address"]});
-        })
-        res.send(needed_store_data);
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-    
+    //     // filter the data and get only the data that is needed by the user 
+    //     let needed_store_data=[];
+    //     all_stores_data.forEach((store)=>{
+    //         needed_store_data.push({store_name: store["store_name"], county:store["county"], address:store["store_address"]});
+    //     })
+    //     res.send(needed_store_data);
+    // })
+    // .catch((err)=>{
+    //     console.log(err);
+    // })
 })
 
-// women related routing starts =========================================
-// display this html page for women accessories
+
+
+/*women products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all women accessories
 app.get('/women-accessories', (req, res)=>{
-
-    // get data from external api 
-    let data ;
-    axios.get("https://api-afrikorture.glitch.me/women-accessories")
-    .then((response)=>{
-        data = response;
-    })
-    .catch((error)=> {
-        console.log(error);
-    })
-
-    // wait for data before render the ejs template 
-    setTimeout(()=>{
-        console.log(data);
-        res.render('pages/women-accessories', data);
-    }, 3000);
+    res.render("pages/women")
 })
 
-//send data from external api for women accessories page
 
 
-// display this html page for women shirts and blouses
-// app.get('/women-shirt-&-blouse', (req, res)=>{
-//     res.render('pages/women-shirt-&-blouse');
-// })
-
-// display this html page for women trouser and pants
+// display all women trouser and pants
 app.get('/women-trousers-&-pants', (req, res)=>{
     res.render('pages/women-trousers-&-pants');
 })
 
 
-// display this html page for women dresses and skirts
+// display all women dresses and skirts
 app.get('/women-dresses-&-skirts', (req, res)=>{
     res.render('pages/women-dresses-&-skirts');
 })
 
 
 
-// display this html page for women shirts and blouse
+// display all women shirts and blouse
 app.get('/women-footwear', (req, res)=>{
     res.render('pages/women-footwear');
 })
 
-// men related routing starts =========================================
-// display this html page for men accessories
+
+/*men products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all men accessories
 app.get('/men-accessories', (req, res)=>{
     res.render('pages/men-accessories');
 })
 
-// display this html page for men shirts and blouses
+// display all men shirts and blouses
 app.get('/men-shirt', (req, res)=>{
     res.render('pages/men-shirt');
 })
 
-// display this html page for men trouser and pants
+// display all men trouser and pants
 app.get('/men-trousers-&-pants', (req, res)=>{
     res.render('pages/men-trousers-&-pants');
 })
 
-// display this html page for men shirts and blouse
+// display all men shirts and blouse
 app.get('/men-footwear', (req, res)=>{
     res.render('pages/men-footwear');
 })
 
-// kids related routing starts =========================================
-// display this html page for kids accessories
+
+
+/*kids products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all kids accessories
 app.get('/kids-accessories', (req, res)=>{
     res.render('pages/kids-accessories');
 })
 
-// display this html page for kids shirts and blouses
+// display all kids shirts and blouses
 app.get('/kids-shirt-&-blouse', (req, res)=>{
     res.render('pages/kids-shirt-&-blouse');
 })
 
-// display this html page for kids trouser and pants
+// display all kids trouser and pants
 app.get('/kids-trousers-&-pants', (req, res)=>{
     res.render('pages/kids-trousers-&-pants');
 })
 
-// display this html page for kids dresses and skirts
+// display all kids dresses and skirts
 app.get('/kids-dresses-&-skirts', (req, res)=>{
     res.render('pages/kids-dresses-&-skirts');
 })
 
-// display this html page for kids shirts and blouse
+// display all kids shirts and blouse
 app.get('/kids-footwear', (req, res)=>{
     res.render('pages/kids-footwear');
 })
 
 
-// beauty related routing starts =========================================
-// display this html page for beauty accessories
+
+/*beauty products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all beauty accessories products
 app.get('/beauty-accessories', (req, res)=>{
     res.render('pages/beauty-accessories');
 })
 
-// display this html page for body & bath
+// display all body & bath products
 app.get('/body-and-bath', (req, res)=>{
     res.render('pages/body-and-bath');
 })
 
-// display this html page for kids accessories
+// display all haircare products
 app.get('/hair-care', (req, res)=>{
     res.render('pages/hair-care');
 })
 
-// display this html page for kids accessories
+// display all skincare products
 app.get('/skin-care', (req, res)=>{
     res.render('pages/skin-care');
 })
 
 
-// apartment related routing starts =========================================
-// display this html page for home decoration products
+
+/*apartment products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all home decoration products
 app.get('/home-decoration', (req, res)=>{
     res.render('pages/home-decoration');
 })
 
 
-// eat related routing starts =========================================
-// display this html page for snacks
+
+
+/*eat products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+
+// display all snacks
 app.get('/snacks', (req, res)=>{
     res.render('pages/snacks');
 })
 
 
-//routing to get all products starts =========================================
-// display this html page for all products
-app.get('/shop-all', (req, res)=>{
-    
-    // get data from external api 
-    let data ;
-    axios.get("https://api-afrikorture.glitch.me/products")
-    .then((response)=>{
-        data = response;
-    })
-    .catch((error)=> {
-        console.log(error);
-    })
 
-    // wait for data before render the ejs template 
-    setTimeout(()=>{
-        console.log(data);
-        res.render('pages/shop-all', data);
-    }, 3000);
+/*all products routing starts--------------------------------------------------------
+--------------------------------------------------------------------------------------*/
+app.get('/shop-all', (req, res)=>{
+
+    // get data from external api using async/await
+    async function getAllShop(){
+
+        try{
+            let response = await axios.get("https://api-afrikorture.glitch.me/products");
+            let all_products = response["data"];
+            console.log(all_products);
+
+            let page_name = "SHOP ALL";
+            res.render('pages/shop', {all_products:all_products, page_name:page_name});
+            
+        }catch(err){
+            //Handle Error
+            console.log(err);
+        }
+
+    }
+
+    getAllShop();
 
 })
 
 
-//routing to get all women products only starts =========================================
-// display this html page for all women products
+// display all women products
 app.get('/women', (req, res)=>{
     res.render('pages/women');
 })
 
 
-//routing to get all men products only starts =========================================
-// display this html page for all men products
+// display all men products
 app.get('/men', (req, res)=>{
     res.render('pages/men');
 })
 
 
 
-//routing to get all kid products only starts =========================================
-// display this html page for all kid products
+// display all kid products
 app.get('/kids', (req, res)=>{
     res.render('pages/kids');
 })
 
 
-//routing to get all beauty products only starts =========================================
-// display this html page for all beauty products
+// display all beauty products
 app.get('/beauty', (req, res)=>{
 
     // get data from external api 
@@ -258,8 +261,7 @@ app.get('/beauty', (req, res)=>{
 })
 
 
-//routing to get all apartment products only starts =========================================
-// display this html page for all apartment products
+// display all apartment products
 app.get('/home-decoration', (req, res)=>{
     // get data from external api 
     let data ;
@@ -279,19 +281,24 @@ app.get('/home-decoration', (req, res)=>{
 })
 
 
-//routing to get all food products only starts =========================================
-// display this html page for all food products
+// display all food products
 app.get('/eat', (req, res)=>{
     res.render('pages/eat');
 })
 
 
-//POST ROUTES
-//enable user to register a shop by adding shop details to the database
+
+
+/*POST ROUTES STARTS
+====================================================================================
+===================================================================================*/
+
+
+// register shop
 app.post('/store-registration', (req,res)=>{
     
     let store_details = req.body;
-    // console.log(store_details);
+    console.log(store_details);
 
     //add data to external api (api-afrikorture)
     let feedback;
@@ -389,6 +396,8 @@ app.post('/upload-product', (req,res)=>{
 // app.post('/add-product'){
 
 // }
+
+
 
 // notify which port is listening on
 app.listen(port, ()=>{

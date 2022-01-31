@@ -1,0 +1,151 @@
+<!-- include head section from partial -->
+<%- include("../template/head.ejs") %>
+<body>
+   
+    <!-- include nav section from partial -->
+    <%- include("../template/nav.ejs") %>
+    
+    <!-- showcase section  -->
+    <section class="jumbotron d-flex flex-column align-items-center justify-content-center mb-5" id="create-shop-showcase-section">
+        <div class="container text-center text-light">
+        <h1 class="display-4 fw-bolder">Create another source of income by doing what you love.</h1>
+        <p class=" p-2 d-inline-block">Create a shop on Afrikorture Marketplace and start selling with ease. </p>
+        
+        <a class="d-block" href="#registration-form">
+            <button type="button" class="btn" style="background-color: orange;">CREATE A STORE</button>
+        </a>
+        </div>
+    </section>
+
+     <!-- benefits  -->
+    <section class="container-fluid d-flex justify-content-center align-items-center p-5">
+        <div class="row p-3">
+        <div class="col-lg-3 container d-flex flex-column justify-content-center align-items-center py-3 px-5 text-center">
+            <i class="fas fa-store fa-5x"></i>
+            <p class="py-3 fw-bold">Create your shop for free.</p>
+            <p>Easily add as many products as you want.</p>
+        </div>
+        <div class="col-lg-3 container d-flex flex-column justify-content-center align-items-center py-3 px-5 text-center">
+            <i class="fas fa-bullhorn fa-5x"></i>
+            <p class="py-3 fw-bolder">Marketing Support.</p>
+            <p>Promotions messages are send via SMS, Email, or Messenger.</p>
+        </div>
+        <div class="col-lg-3 container d-flex flex-column justify-content-center align-items-center py-3 px-5 text-center">
+            <i class="fas fa-money-bill fa-5x"></i>
+            <p class="py-3 fw-bold">Automated Local Payment</p>
+            <p>You are alerted by email or Text and have 48 hours to confirm the order.</p>
+        </div>
+        <div class="col-lg-3 container d-flex flex-column justify-content-center align-items-center py-3 px-5 text-center ">
+            <i class="fa fa-phone fa-5x"></i>
+            <p class="py-3 fw-bold">Customer service.</p>
+            <p>We respond to issues that buyers may have.</p>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- registration form section  -->
+    <section class="p-5" style="background-color: #fad591;">
+
+        <h3 class="text-center fw-bolder" id="registration-form">Store Registration</h3>
+
+        <form action="" method=""  >
+            <div class="form-group mt-4">
+                <label for="first-name">First Name</label>
+                <input type="text" required class="form-control" id="first-name"  placeholder="John">
+            </div>
+            <div class="form-group mt-4">
+                <label for="last-name">First Name</label>
+                <input type="text" required class="form-control" id="last-name" placeholder="Flomo">
+            </div>
+            <div class="form-group mt-4">
+                <label for="user-name">Username <span>*</span></label>
+                <input type="text" required class="form-control" id="user-name" placeholder="johnflomo">
+            </div>
+            <div class="form-group mt-4">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" required class="form-control" id="email" placeholder="johnflomo@gmail.com">
+            </div>
+            <div class="form-group mt-4">
+                <label for="store-name">Store Name <span>*</span></label>
+                <input type="text" required  class="form-control" id="store-name" placeholder="John Fashion Store">
+            </div>
+            <div class="form-group mt-4">
+                <label for="address">Address<span>*</span></label>
+                <input type="text" required class="form-control" id="address" placeholder="12th Street Sinkor">
+            </div>
+            <div class="form-group mt-4">
+                <label for="county">County<span>*</span></label>
+                <select class="form-control" name="county" id="county" style="width: 100%;">
+                <option value="select-count" disabled selected>Select County</option>
+                <option value="Bomi">Bomi</option>
+                <option value="Bong">Bong</option>
+                <option value="Gbarpolu">Gbarpolu</option>
+                <option value="Grand Bassa">Grand Bassa</option>
+                <option value=" Grand Cape Mount"> Grand Cape Mount</option>
+                <option value="Grand Gedeh">Grand Gedeh</option>
+                <option value="Grand Kru">Grand Kru</option>
+                <option value="Lofa">Lofa</option>
+                <option value="Margibi">Margibi</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Montserrado">Montserrado</option>
+                <option value="Nimba">Nimba</option>
+                <option value="Rivercess">Rivercess</option>
+                <option value="River Gee">River Gee</option>
+                <option value=" Sinoe"> Sinoe</option>
+                </select>
+            </div>
+            <div class="form-group mt-4">
+                <label for="phone-number">Store Phone<span>*</span></label>
+                <input type="text" required  class="form-control" id="phone-number" placeholder="0770112233">
+            </div>
+            <div class="form-group mt-4">
+                <label for="social-media-link">Social Media Link</label>
+                <input type="text" required class="form-control" id="social-media-link" placeholder="Enter your social media link">
+            </div>
+            
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="#registration-result-area">
+                    <button type="button" class="btn btn-dark mt-4" id="create-store-btn">Create Store</button>
+                </a>
+                <!-- <input type="submit" name="" id=""> -->
+            </div>
+        </form>
+    </section>
+
+
+    <!-- result after registering  -->
+    <div id="registration-result-area" style="background-color: green; color: white; text-align: center; display: none;">
+        <p style="padding: 6px;" id="result-text">Shop sucessfully created!</p>
+    </div>
+
+
+
+    
+
+
+    
+    <!-- include footer section from partial -->
+    <%- include("../template/footer.ejs") %>
+
+   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- custom js  -->
+    <script src="js/script.js"></script>
+    <script src="js/register-store.js"></script>
+</body>
+
+</html>
