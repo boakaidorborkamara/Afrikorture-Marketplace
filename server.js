@@ -68,27 +68,25 @@ app.get('/brands', (req, res)=>{
 
 // display all women accessories
 app.get('/women-accessories', (req, res)=>{
-    res.render("pages/women")
-})
-
-
-
-// display all women trouser and pants
-app.get('/women-trousers-&-pants', (req, res)=>{
-    res.render('pages/women-trousers-&-pants');
+    res.render("pages/products-page")
 })
 
 
 // display all women dresses and skirts
-app.get('/women-dresses-&-skirts', (req, res)=>{
-    res.render('pages/women-dresses-&-skirts');
+app.get('/women-dress-&-skirt', (req, res)=>{
+    res.render('pages/products-page');
+})
+
+// display all women trouser and pants
+app.get('/women-trouser-and-pant', (req, res)=>{
+    res.render('pages/products-page');
 })
 
 
 
 // display all women shirts and blouse
-app.get('/women-footwear', (req, res)=>{
-    res.render('pages/women-footwear');
+app.get('/women-foot-wear', (req, res)=>{
+    res.render('pages/products-page');
 })
 
 
@@ -97,22 +95,25 @@ app.get('/women-footwear', (req, res)=>{
 
 // display all men accessories
 app.get('/men-accessories', (req, res)=>{
-    res.render('pages/men-accessories');
+    res.render('pages/products-page');
 })
 
-// display all men shirts and blouses
-app.get('/men-shirt', (req, res)=>{
-    res.render('pages/men-shirt');
-})
 
 // display all men trouser and pants
-app.get('/men-trousers-&-pants', (req, res)=>{
-    res.render('pages/men-trousers-&-pants');
+app.get('/men-trouser-and-pant', (req, res)=>{
+    res.render('pages/products-page');
 })
 
+
+// display all men shirts and blouses
+// app.get('/men-shirt', (req, res)=>{
+//     res.render('pages/products-page');
+// })
+
+
 // display all men shirts and blouse
-app.get('/men-footwear', (req, res)=>{
-    res.render('pages/men-footwear');
+app.get('/men-foot-wear', (req, res)=>{
+    res.render('pages/products-page');
 })
 
 
@@ -152,7 +153,7 @@ app.get('/kids-footwear', (req, res)=>{
 
 // display all beauty accessories products
 app.get('/beauty-accessories', (req, res)=>{
-    res.render('pages/beauty-accessories');
+    res.render('pages/product-page');
 })
 
 // display all body & bath products

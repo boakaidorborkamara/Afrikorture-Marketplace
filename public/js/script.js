@@ -1,15 +1,24 @@
-// get all women accesories 
-function getWomenAccessories(){
+
+// the current route in the browser 
+let current_route = window.location.pathname;
+console.log(current_route);
+let url;
+
+//Display all the data from the current route 
+function getData(){
     // parent container that holds the product cards 
     let product_area = document.getElementById("product-area");
     console.log(product_area);
 
     // add page name
     let page_title = document.getElementById("page-title");
-    page_title.innerText = "Women Accessories"; 
+    // page_title.slice(1); // remove the / sign from the page title
+    page_title.innerText = current_route; 
 
+    let url = "https://api-afrikorture.glitch.me"+current_route;
+    console.log("URL",url)
     let women_accessories;
-    fetch("https://api-afrikorture.glitch.me/women-accessories")
+    fetch(url)
     .then(response => response.json())
     .then((data)=>{
         women_accessories = data;
@@ -74,8 +83,18 @@ function getWomenAccessories(){
 
 
 
+
+
 // call functions 
-getWomenAccessories()
+// get all women accesories base on selected menu item
+if(!current_route){
+    console.log("not")
+    getData();
+}
+else{
+    getData();
+}
+
 
 
     
