@@ -123,27 +123,27 @@ app.get('/men-foot-wear', (req, res)=>{
 
 // display all kids accessories
 app.get('/kids-accessories', (req, res)=>{
-    res.render('pages/kids-accessories');
+    res.render('pages/products-page');
 })
 
 // display all kids shirts and blouses
 app.get('/kids-shirt-&-blouse', (req, res)=>{
-    res.render('pages/kids-shirt-&-blouse');
+    res.render('pages/products-page');
 })
 
 // display all kids trouser and pants
 app.get('/kids-trousers-&-pants', (req, res)=>{
-    res.render('pages/kids-trousers-&-pants');
+    res.render('pages/products-page');
 })
 
 // display all kids dresses and skirts
 app.get('/kids-dresses-&-skirts', (req, res)=>{
-    res.render('pages/kids-dresses-&-skirts');
+    res.render('pages/products-page');
 })
 
 // display all kids shirts and blouse
 app.get('/kids-footwear', (req, res)=>{
-    res.render('pages/kids-footwear');
+    res.render('pages/products-page');
 })
 
 
@@ -153,22 +153,22 @@ app.get('/kids-footwear', (req, res)=>{
 
 // display all beauty accessories products
 app.get('/beauty-accessories', (req, res)=>{
-    res.render('pages/product-page');
+    res.render('pages/products-page');
 })
 
 // display all body & bath products
-app.get('/body-and-bath', (req, res)=>{
-    res.render('pages/body-and-bath');
+app.get('/bath-and-body', (req, res)=>{
+    res.render('pages/products-page');
 })
 
 // display all haircare products
 app.get('/hair-care', (req, res)=>{
-    res.render('pages/hair-care');
+    res.render('pages/products-page');
 })
 
 // display all skincare products
 app.get('/skin-care', (req, res)=>{
-    res.render('pages/skin-care');
+    res.render('pages/products-page');
 })
 
 
@@ -178,7 +178,7 @@ app.get('/skin-care', (req, res)=>{
 
 // display all home decoration products
 app.get('/home-decoration', (req, res)=>{
-    res.render('pages/home-decoration');
+    res.render('pages/products-page');
 })
 
 
@@ -189,7 +189,7 @@ app.get('/home-decoration', (req, res)=>{
 
 // display all snacks
 app.get('/snacks', (req, res)=>{
-    res.render('pages/snacks');
+    res.render('pages/products-page');
 })
 
 
