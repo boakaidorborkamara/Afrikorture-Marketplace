@@ -6,7 +6,7 @@ const axios = require("axios").default;
 async function getAllProducts(){
     try{
         const response = await axios.get("https://api-afrikorture.glitch.me/product");
-        // console.log(response["data"]);
+        console.log(response["data"]);
         return response["data"];
     }
     catch(err){

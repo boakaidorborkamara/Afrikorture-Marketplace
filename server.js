@@ -6,7 +6,6 @@ let path = require('path');
 const port = process.env.PORT ||  3500;
 
 let ejs = require('ejs');
-const { response } = require('express');
 
 //enable json to be use
 app.use(express.json());
