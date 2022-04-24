@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express();
+const router = express.Router();
 const axios = require("axios").default;
 let path = require('path');
 const port = process.env.PORT ||  3500;
@@ -17,6 +18,11 @@ app.set('view engine', 'ejs');
 
 //setup static middleware
 app.use(express.static('./public'));
+
+//ROUTERS
+const index_router = require('./routers/index_route');
+
+app.use("/", index_router);
 
 
 // notify which port is listening on

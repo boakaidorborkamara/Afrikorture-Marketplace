@@ -4,7 +4,7 @@
   "description": "A web application that enables Liberians to sell African fashion, crafts, food, etc with ease locally and worldwide. (Kwagei Capstone &amp; cs50 Final Project)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon server.js",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
