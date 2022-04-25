@@ -20,8 +20,10 @@ app.use(express.static('./public'));
 
 //ROUTERS
 const index_router = require('./routers/index_route');
+const product_router = require('./routers/products_router');
 
 app.use("/", index_router);
+app.use(product_router);
 
 
 // notify which port is listening on
