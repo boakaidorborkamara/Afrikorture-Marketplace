@@ -193,7 +193,7 @@ exports.apartment_products = (req, res)=>{
 
 
 //display only eat products
-exports.apartment_products = (req, res)=>{
+exports.eat_products = (req, res)=>{
     let eat_products;
     url = "/eat"
 
