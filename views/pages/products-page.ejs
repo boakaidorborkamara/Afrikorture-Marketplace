@@ -6,11 +6,13 @@
     <%- include("../template/nav.ejs")-%>
 
     <!-- Page Header Start -->
-    <div class="container-fluid mb-5" style="background-color: orange">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3" id="page-title">Page Title</h1>
-        </div>
-    </div>
+    <% if (results) { %>
+        <div class="container-fluid mb-5" style="background-color: orange">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+                <h1 class="font-weight-semi-bold text-uppercase mb-3" id="page-title"><%= results.page_title %></h1>
+            </div>
+        </div><% }
+    %> 
     <!-- Page Header End -->
 
 
@@ -167,12 +169,16 @@
                     </div>
 
                      <!-- products cards  -->
-                     <div class="col-lg-4 col-md-6 col-sm-12 pb-1"> 
+                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1"> 
                          
-                        <% if (all_products) { %>
-                            <% all_products.forEach(function(product){ %>
+                        <!-- display all products on products page  -->
+                       
 
-                                <div class="card product-item border-0 mb-4"> 
+
+                        <% if (results) { %>
+                            <% results.forEach(function(product){ %>
+
+                                <div class="card product-item border-0 mb-4 "> 
                                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0"> 
                                         <img class="img-fluid w-100" src="<%= product.first_image %>" alt="">
                                     </div>
@@ -188,8 +194,8 @@
                                     </div>
                                 </div>
                             <% }); %>
-                        <% } %>
-                      
+                        <% }  %>
+
                     </div>
 
                     <!-- pagination btn  -->
@@ -245,7 +251,7 @@
     <script src="js/main.js"></script>
 
     <!-- custom javascript  -->
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>
