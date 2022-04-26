@@ -10,12 +10,7 @@ const shopController = require('../controllers/shopController');
 router.get("/create-shop", shopController.displayBrandCretionForm);
 
 //Create a new shop on POST
-router.post("/create-shop", (req,res)=>{
-    console.log(req.url);
-    console.log(req.body);
-    
-    res.send("Working on creating a new shop")
-})
+router.post("/create-shop", shopController.createNewShop)
 
 //Display all the shops on the platform
 router.get("/all-shops", (req,res)=>{

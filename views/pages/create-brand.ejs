@@ -45,35 +45,16 @@
 
 
     <!-- registration form section  -->
-    <section class="p-5" style="background-color: #fad591;">
+    <section class="p-5" id="form-container">
 
-        <h3 class="text-center fw-bolder" id="registration-form">Store Registration</h3>
+        <h3 class="text-center fw-bolder" id="registration-form">Creat Your Shop</h3>
 
         <form action="/create-shop" method="post">
             <div class="form-group mt-4">
-                <label for="first-name">First Name</label>
-                <input type="text" required class="form-control" id="first-name" name="first-name" value="John">
+                <label for="shop-name">Shop Name</label>
+                <input type="text" required class="form-control" id="shop-name" name="shop-name" value="SK Fashion">
             </div>
-            <div class="form-group mt-4">
-                <label for="last-name">First Name</label>
-                <input type="text" required class="form-control" id="last-name" name="last-name" value="Flomo">
-            </div>
-            <div class="form-group mt-4">
-                <label for="user-name">Username <span>*</span></label>
-                <input type="text" required class="form-control" id="user-name" name="user-name" value="johnflomo">
-            </div>
-            <div class="form-group mt-4">
-                <label for="email">Email <span>*</span></label>
-                <input type="email" required class="form-control" id="email" name="user-email" value="johnflomo@gmail.com">
-            </div>
-            <div class="form-group mt-4">
-                <label for="store-name">Store Name <span>*</span></label>
-                <input type="text" required  class="form-control" id="store-name" name="shop-name" value="John Fashion Store">
-            </div>
-            <div class="form-group mt-4">
-                <label for="address">Address<span>*</span></label>
-                <input type="text" required class="form-control" id="address" name="user-address" value="12th Street Sinkor">
-            </div>
+            
             <div class="form-group mt-4">
                 <label for="county">County<span>*</span></label>
                 <select class="form-control" name="county" id="county" style="width: 100%;">
@@ -96,17 +77,43 @@
                 </select>
             </div>
             <div class="form-group mt-4">
-                <label for="phone-number">Store Phone<span>*</span></label>
+                <label for="address">Address<span>*</span></label>
+                <input type="text" required class="form-control" id="address" name="user-address" value="12th Street Sinkor">
+            </div>
+            <div class="form-group mt-4">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" required class="form-control" id="email" name="user-email" value="johnflomo@gmail.com">
+            </div>
+            <div class="form-group mt-4">
+                <label for="phone-number">Shop Phone<span>*</span></label>
                 <input type="text" required  class="form-control" id="phone-number" name="phone-number" value="0770112233">
             </div>
             <div class="form-group mt-4">
-                <label for="social-media-link">Social Media Link</label>
-                <input type="text" required class="form-control" id="social-media-link" name="social-media-link" placeholder="Enter your social media link" value="www.facebook.com">
+                <label for="email">Logo <span>*</span></label>
+                <input type="file" required class="form-control" id="logo" name="logo">
+            </div>
+
+            
+            
+            
+            <div class="form-group mt-4">
+                <label for="social-media-link">Facebook Page</label>
+                <input type="text" required class="form-control" id="facebook-link" name="facebook-link" placeholder="Copy and paste your business Facebook page link.">
+            </div>
+            <div class="form-group mt-4">
+                <label for="instagram-link">Instagram Page</label>
+                <input type="text" required class="form-control" id="instagram-link" name="instagram-link" placeholder="Copy and paste your business Instagram page link.">
+            </div>
+
+            <div class="form-group mt-4">
+                <label for="instagram-link">Shop Description</label>
+                <br>
+                <textarea name="shop-description" id="shop-description" cols="30" rows="10" placeholder="In few word, tell customers what your business is about and what it offers." style="width: 100%;"></textarea>
             </div>
             
             <div class="d-flex justify-content-center align-items-center">
 
-                <input type="submit" value="Create Store">
+                <input type="submit" value="CREATE SHOP">
                
             </div>
         </form>
@@ -147,4 +154,21 @@
     <script src="js/register-store.js"></script>
 </body>
 
+<style>
+    #form-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form-container form{
+        width: 60%;
+        border: 1px solid black;
+        background-color: orange;
+        padding: 20px;
+        font-size: 1.5em;
+    }
+
+</style>
 </html>
