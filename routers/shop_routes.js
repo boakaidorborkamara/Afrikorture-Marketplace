@@ -1,5 +1,4 @@
 const express = require("express");
-const { reset } = require("nodemon");
 const router = express.Router();
 
 
@@ -12,6 +11,9 @@ router.get("/create-shop", shopController.displayBrandCretionForm);
 
 //Create a new shop on POST
 router.post("/create-shop", (req,res)=>{
+    console.log(req.url);
+    console.log(req.body);
+    
     res.send("Working on creating a new shop")
 })
 

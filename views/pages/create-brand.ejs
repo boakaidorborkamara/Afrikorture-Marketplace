@@ -6,7 +6,7 @@
     <%- include("../template/nav.ejs") %>
     
     <!-- showcase section  -->
-    <section class="jumbotron d-flex flex-column align-items-center justify-content-center mb-5" id="create-shop-showcase-section">
+    <section class="jumbotron d-flex flex-column align-items-center justify-content-center mb-5" id="create-shop-showcase-section" style="background-image: url('/img/create-shop-showcase-image.jpg'); background-repeat: no-repeat; background-size: cover;">
         <div class="container text-center text-light">
         <h1 class="display-4 fw-bolder">Create another source of income by doing what you love.</h1>
         <p class=" p-2 d-inline-block">Create a shop on Afrikorture Marketplace and start selling with ease. </p>
@@ -49,30 +49,30 @@
 
         <h3 class="text-center fw-bolder" id="registration-form">Store Registration</h3>
 
-        <form action="" method=""  >
+        <form action="/create-shop" method="post">
             <div class="form-group mt-4">
                 <label for="first-name">First Name</label>
-                <input type="text" required class="form-control" id="first-name"  placeholder="John">
+                <input type="text" required class="form-control" id="first-name" name="first-name" value="John">
             </div>
             <div class="form-group mt-4">
                 <label for="last-name">First Name</label>
-                <input type="text" required class="form-control" id="last-name" placeholder="Flomo">
+                <input type="text" required class="form-control" id="last-name" name="last-name" value="Flomo">
             </div>
             <div class="form-group mt-4">
                 <label for="user-name">Username <span>*</span></label>
-                <input type="text" required class="form-control" id="user-name" placeholder="johnflomo">
+                <input type="text" required class="form-control" id="user-name" name="user-name" value="johnflomo">
             </div>
             <div class="form-group mt-4">
                 <label for="email">Email <span>*</span></label>
-                <input type="email" required class="form-control" id="email" placeholder="johnflomo@gmail.com">
+                <input type="email" required class="form-control" id="email" name="user-email" value="johnflomo@gmail.com">
             </div>
             <div class="form-group mt-4">
                 <label for="store-name">Store Name <span>*</span></label>
-                <input type="text" required  class="form-control" id="store-name" placeholder="John Fashion Store">
+                <input type="text" required  class="form-control" id="store-name" name="shop-name" value="John Fashion Store">
             </div>
             <div class="form-group mt-4">
                 <label for="address">Address<span>*</span></label>
-                <input type="text" required class="form-control" id="address" placeholder="12th Street Sinkor">
+                <input type="text" required class="form-control" id="address" name="user-address" value="12th Street Sinkor">
             </div>
             <div class="form-group mt-4">
                 <label for="county">County<span>*</span></label>
@@ -97,18 +97,17 @@
             </div>
             <div class="form-group mt-4">
                 <label for="phone-number">Store Phone<span>*</span></label>
-                <input type="text" required  class="form-control" id="phone-number" placeholder="0770112233">
+                <input type="text" required  class="form-control" id="phone-number" name="phone-number" value="0770112233">
             </div>
             <div class="form-group mt-4">
                 <label for="social-media-link">Social Media Link</label>
-                <input type="text" required class="form-control" id="social-media-link" placeholder="Enter your social media link">
+                <input type="text" required class="form-control" id="social-media-link" name="social-media-link" placeholder="Enter your social media link" value="www.facebook.com">
             </div>
             
             <div class="d-flex justify-content-center align-items-center">
-                <a href="#registration-result-area">
-                    <button type="button" class="btn btn-dark mt-4" id="create-store-btn">Create Store</button>
-                </a>
-                <!-- <input type="submit" name="" id=""> -->
+
+                <input type="submit" value="Create Store">
+               
             </div>
         </form>
     </section>
