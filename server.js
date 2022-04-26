@@ -21,9 +21,11 @@ app.use(express.static('./public'));
 //ROUTERS
 const index_router = require('./routers/index_route');
 const product_router = require('./routers/products_router');
+const shop_routes = require('./routers/shop_routes');
 
 app.use("/", index_router);
 app.use(product_router);
+app.use(shop_routes);
 
 
 // notify which port is listening on
