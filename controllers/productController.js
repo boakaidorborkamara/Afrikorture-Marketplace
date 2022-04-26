@@ -142,7 +142,7 @@ exports.beauty_products = (req, res)=>{
     //get all kids product
     (async function getMenProducts(){
         try{
-            const response = await axios.get("https://api-afrikorture.glitch.me/product/Kids");
+            const response = await axios.get("https://api-afrikorture.glitch.me/product/Beauty");
             beauty_products = response["data"]["data"];
             beauty_products["page_title"] = page_header_title;
             console.log(beauty_products);
@@ -174,7 +174,7 @@ exports.apartment_products = (req, res)=>{
     //get all kids product
     (async function getMenProducts(){
         try{
-            const response = await axios.get("https://api-afrikorture.glitch.me/product/Kids");
+            const response = await axios.get("https://api-afrikorture.glitch.me/product/Apartment");
             apartment_products = response["data"]["data"];
             apartment_products["page_title"] = page_header_title;
             console.log(apartment_products);
@@ -199,14 +199,14 @@ exports.eat_products = (req, res)=>{
 
     //set page header
     if(url == '/eat'){
-        page_header_title = "Eat Products"
+        page_header_title = "Eat"
         console.log(url);
     }
 
     //get all kids product
     (async function getMenProducts(){
         try{
-            const response = await axios.get("https://api-afrikorture.glitch.me/product/Kids");
+            const response = await axios.get("https://api-afrikorture.glitch.me/product/Eat");
             eat_products = response["data"]["data"];
             eat_products["page_title"] = page_header_title;
             console.log(eat_products);
