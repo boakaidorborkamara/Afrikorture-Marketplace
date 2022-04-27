@@ -1,14 +1,19 @@
+let cart_status = document.getElementById("cart-notification");
+console.log(cart_status);
+
 let cart = [];
 let image_url;
 let product_name;
-let product_price
+let product_price;
+let cart_items_counter = 0;
 
 
 let cart_btn = document.querySelectorAll(".cart-btn");
 console.log(cart_btn);
 
-
-function getProductDetail(clicked_cart_btn){
+/* loop through the html code of the selected product card
+   and get the product name, price, image and add the info to cart */
+function addToCart(clicked_cart_btn){
     console.log(clicked_cart_btn);
 
     //the container that have the add to cart button and the view Detail btn
@@ -56,16 +61,42 @@ function getProductDetail(clicked_cart_btn){
 
     //send the details to the cart
     cart[product_name] = {name:product_name, price: product_price, image:image_url};
+    
+    //update cart items counter
+    cart_items_counter++;
+    //display count in the browser
+    cart_status.innerHTML = cart_items_counter;
+
     console.log(cart);
+    console.log(cart_items_counter);
 }
 
 
+//increment user item each time an item is added to the cart
+function updateCartStatus(){
+    let item_amount = 0;
+    
+    for(i = 0; i < cart.length; i++){
+        item_amount++;
+        console.log(item_amount);
+    }
+
+    console.log("working");
+    console.log("cart", typeof cart);
+    console.log(item_amount);
+
+}
+
+// add functionality to each ADD TO CART btn on the product page
 for(i = 0; i < cart_btn.length; i++){
     // console.log(cart_btn[i]);
 
     cart_btn[i].addEventListener("click", (e)=>{
         let selected_btn = e.target;
 
-        getProductDetail(selected_btn);
+        addToCart(selected_btn);
+        // updateCartStatus();
     });
+    
 }
+
