@@ -50,11 +50,12 @@
         <h3 class="text-center fw-bolder" id="registration-form">Creat Your Shop</h3>
 
         <form action="/create-shop" method="post">
+            <!-- shop name  -->
             <div class="form-group mt-4">
                 <label for="shop-name">Shop Name</label>
                 <input type="text" required class="form-control" id="shop-name" name="shop-name" value="SK Fashion">
             </div>
-            
+            <!-- counties  -->
             <div class="form-group mt-4">
                 <label for="county">County<span>*</span></label>
                 <select class="form-control" name="county" id="county" style="width: 100%;">
@@ -76,45 +77,45 @@
                 <option value=" Sinoe"> Sinoe</option>
                 </select>
             </div>
+            <!-- address -->
             <div class="form-group mt-4">
                 <label for="address">Address<span>*</span></label>
                 <input type="text" required class="form-control" id="address" name="user-address" value="12th Street Sinkor">
             </div>
+            <!-- email  -->
             <div class="form-group mt-4">
                 <label for="email">Email <span>*</span></label>
                 <input type="email" required class="form-control" id="email" name="user-email" value="johnflomo@gmail.com">
             </div>
+            <!-- phone number  -->
             <div class="form-group mt-4">
                 <label for="phone-number">Shop Phone<span>*</span></label>
-                <input type="text" required  class="form-control" id="phone-number" name="phone-number" value="0770112233">
+                <input type="phone" required  class="form-control" id="phone-number" name="phone-number" value="0770112233">
             </div>
-            <div class="form-group mt-4">
+            <!-- brand logo  -->
+            <!-- <div class="form-group mt-4">
                 <label for="email">Logo <span>*</span></label>
                 <input type="file" required class="form-control" id="logo" name="logo">
-            </div>
-
-            
-            
-            
+            </div> -->
+            <!-- facebook page  -->
             <div class="form-group mt-4">
                 <label for="social-media-link">Facebook Page</label>
                 <input type="text" required class="form-control" id="facebook-link" name="facebook-link" placeholder="Copy and paste your business Facebook page link.">
             </div>
+            <!-- instagram page  -->
             <div class="form-group mt-4">
                 <label for="instagram-link">Instagram Page</label>
                 <input type="text" required class="form-control" id="instagram-link" name="instagram-link" placeholder="Copy and paste your business Instagram page link.">
             </div>
-
+            <!-- shop description  -->
             <div class="form-group mt-4">
                 <label for="instagram-link">Shop Description</label>
                 <br>
                 <textarea name="shop-description" id="shop-description" cols="30" rows="10" placeholder="In few word, tell customers what your business is about and what it offers." style="width: 100%;"></textarea>
             </div>
-            
+            <!-- button  -->
             <div class="d-flex justify-content-center align-items-center">
-
                 <input type="submit" value="CREATE SHOP">
-               
             </div>
         </form>
     </section>
@@ -151,7 +152,7 @@
 
     <!-- custom js  -->
     <script src="js/script.js"></script>
-    <script src="js/register-store.js"></script>
+    <!-- <script src="js/register-store.js"></script> -->
 </body>
 
 <style>
