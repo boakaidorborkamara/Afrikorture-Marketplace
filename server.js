@@ -17,6 +17,8 @@ app.set('view engine', 'ejs');
 
 //setup static middleware
 app.use(express.static('./public'));
+app.use(express.static('../public'));
+
 
 //ROUTERS
 const index_router = require('./routers/index_route');

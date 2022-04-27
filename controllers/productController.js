@@ -222,3 +222,65 @@ exports.eat_products = (req, res)=>{
 
     
 }
+
+
+//display products base on main and sub categories
+exports.products_per_main_and_sub_categories = (req, res)=>{
+    // let products_per_main_and_sub_categories;
+    let main_category = req.params["main_category"];
+    let sub_category = req.params["sub_category"];
+    
+    url = `/${main_category}/${sub_category}`;
+
+    console.log(main_category);
+    console.log(sub_category);
+    
+
+    //set page header
+    // if(url == '/eat'){
+    //     page_header_title = "Eat"
+    //     console.log(url);
+    // }
+    
+    // page_header_title = "Default Content";
+
+    //get all kids product
+    // (async function getProductBaseOnCategories(){
+    //     try{
+    //         const response = await axios.get("http://localhost:3000/product/Kids/footwear");
+    //         products_per_main_and_sub_categories = response["data"]["data"];
+    //         // products_per_main_and_sub_categories["page_title"] = page_header_title;
+    //         console.log(products_per_main_and_sub_categories);
+    //     }
+    //     catch(err){
+    //         console.error(err);
+    //     }
+
+    //     console.log('sending data to frontend')
+    //     res.render('pages/products-page', {results:products_per_main_and_sub_categories});
+
+    // })();
+
+
+    (async function getData() {
+        let products_per_main_and_sub_categories;
+        let external_api_url = `https://api-afrikorture.glitch.me/product/${main_category}/${sub_category}`
+        console.log(external_api_url);
+
+        try{
+            let response = await axios.get(external_api_url);
+            products_per_main_and_sub_categories = response['data']
+            console.log(products_per_main_and_sub_categories);
+        }
+        catch{
+            (err)=>{
+                console.log(err);
+            }
+        }
+
+        res.render('pages/products-page', {results:products_per_main_and_sub_categories});
+
+    })();
+
+    
+}

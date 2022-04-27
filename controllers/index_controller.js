@@ -26,9 +26,9 @@ exports.homepage = (req,res)=>{
 
     let result = getAllProducts()
     .then((results)=>{
-        console.log(results);
+        // console.log(results);
     })
-    console.log(result);
+    // console.log(result);
     res.render('pages/index');
     // res.send("Homepage not yet implemented");
 }
