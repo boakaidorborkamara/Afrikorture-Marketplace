@@ -82,7 +82,7 @@
   
                           <!-- women items  -->
                           <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Women</a>
+                            <a href="#" class="nav-link dropdown-toggle main_category" data-toggle="dropdown">Women</a>
                             <div class="dropdown-menu rounded-0 m-0" id="women-dropdown-options">
                               <a href="/Women/Accessories" class="dropdown-item women">Accessories</a>
                               <a href="/Women/Dress-&-Skirts" class="dropdown-item women">Dresses & Skirts</a>
@@ -156,5 +156,24 @@
         </div>
     </div>
 </div>
+
+<!-- <script>
+    let main_categories;
+    console.log("working")
+
+    fetch('https://api-afrikorture.glitch.me/main_category')
+    .then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+        main_categories = data;
+        console.log(main_categories);
+    })
+    .catch((err)=>{
+        if(err){
+            console.err;
+        }
+    })
+</script> -->
 <!-- Navbar End -->
 
