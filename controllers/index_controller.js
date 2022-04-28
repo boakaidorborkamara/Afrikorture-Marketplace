@@ -78,7 +78,7 @@ exports.homepage = (req,res)=>{
         console.log(total_products);
 
         //send data to the frontend
-        res.render('pages/index');
+        res.render('pages/index', {total_products});
     })
 
 
