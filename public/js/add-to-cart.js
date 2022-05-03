@@ -4,6 +4,7 @@ console.log(cart_status);
 let cart = [];
 let image_url;
 let product_name;
+let product_id;
 let product_price;
 let cart_items_counter = 0;
 
@@ -15,6 +16,9 @@ console.log(cart_btn);
    and get the product name, price, image and add the info to cart */
 function addToCart(clicked_cart_btn){
     console.log(clicked_cart_btn);
+
+    product_id = clicked_cart_btn.getAttribute('id');
+    // console.log(product_id);
 
     //the container that have the add to cart button and the view Detail btn
     let add_to_cart_btn_parent_ele = clicked_cart_btn.parentElement;
@@ -60,7 +64,11 @@ function addToCart(clicked_cart_btn){
     }
 
     //send the details to the cart
-    cart[product_name] = {name:product_name, price: product_price, image:image_url};
+    cart[product_name] = {
+        name:product_name,
+        id:product_id,
+        price: product_price,
+        image:image_url};
     
     //update cart items counter
     cart_items_counter++;
