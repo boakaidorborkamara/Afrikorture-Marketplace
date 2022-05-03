@@ -11,10 +11,10 @@ exports.displayBrandCretionForm = ((req, res)=>{
 //create new store
 exports.createNewShop = ((req,res)=>{
     let new_shop_details = req.body;
-    console.log(new_shop_details);
+    console.log(new_shop_details); 
     
 
-    axios.post('https://api-afrikorture.glitch.me/brand/create', {
+    axios.post('http://localhost:3000/brand/create', {
         firstName: 'Fred',
         lastName: 'Flintstone'
       })
